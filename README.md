@@ -1,8 +1,8 @@
 <header>
-<img src="assets/logo-dark.svg" alt="logo" height="90" align="left">
-<h1 style="display: inline">Education app</h1>
-
-Open Source Education app for android and ios
+<p align="center">
+  <img src="assets/logo-dark.svg" alt="logo" height="90">
+</p>
+<p align="center">Open Source Education app for android and ios</p>
 </header>
 
 ## Getting Started
