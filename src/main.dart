@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'colors.dart' as EduColors;
-
+import 'input.dart' as Input;
 void main() {
   runApp(MyApp());
 }
@@ -21,6 +21,9 @@ class LoginDemo extends StatefulWidget {
 }
 
 class _LoginDemoState extends State<LoginDemo> {
+  final emailController = TextEditingController();
+  final loginController = TextEditingController();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,67 +48,12 @@ class _LoginDemoState extends State<LoginDemo> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      TextFormField(
-                        style: TextStyle(
-                            color: EduColors.foreground, fontSize: 14),
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.all(20.0),
-                          floatingLabelBehavior: FloatingLabelBehavior.never,
-                          labelText: 'E-mail',
-                          hintText: 'E-mail',
-                          hintStyle: TextStyle(
-                              color: EduColors.secondForeground, fontSize: 14),
-                          labelStyle: TextStyle(
-                              color: EduColors.secondForeground, fontSize: 14),
-                          fillColor: EduColors.secondBackground,
-                          filled: true,
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12.0),
-                            borderSide: BorderSide(
-                                color: EduColors.primary, width: 1.0),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12.0),
-                            borderSide: BorderSide(
-                              color: EduColors.background,
-                              width: 1.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 16),
-                        child: TextFormField(
-                          obscureText: true,
-                          style: TextStyle(
-                              color: EduColors.foreground, fontSize: 14),
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.all(20.0),
-                            floatingLabelBehavior: FloatingLabelBehavior.never,
-                            labelText: 'Пароль',
-                            hintText: 'Пароль',
-                            hintStyle: TextStyle(
-                                color: EduColors.secondForeground,
-                                fontSize: 14),
-                            labelStyle:
-                                TextStyle(color: EduColors.secondForeground),
-                            fillColor: EduColors.secondBackground,
-                            filled: true,
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                              borderSide: BorderSide(
-                                  color: EduColors.primary, width: 1.0),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                              borderSide: BorderSide(
-                                color: EduColors.background,
-                                width: 1.0,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      Input.Input(contoller:emailController,
+                                  placeHolder: "E-mail",
+                                  obscureText: false),
+                      Input.Input(contoller:loginController,
+                                  placeHolder: "Пароль",
+                                  obscureText: true),
                       TextButton(
                         onPressed: () {
                           // TODO: FORGOT PASSWORD SCREEN GOES HERE
@@ -146,3 +94,5 @@ class _LoginDemoState extends State<LoginDemo> {
         ));
   }
 }
+
+
