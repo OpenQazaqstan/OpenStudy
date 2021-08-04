@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'colors.dart' as EduColors;
+
 import 'pages/login.dart' as Login;
 import 'pages/entry.dart' as Entry;
 
@@ -17,4 +18,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
