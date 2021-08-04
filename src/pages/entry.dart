@@ -32,7 +32,7 @@ class SlideshowState extends State<Slideshow> with SingleTickerProviderStateMixi
   Widget build(BuildContext context){
     return AnimatedBuilder(animation: _myAnimation!,builder: (context,ch) =>
       Container(
-        child:Text("Да какого вуя",style:
+        child:Text("text example",style:
         TextStyle(color: Color.fromRGBO(_myAnimation!.value.toInt(), 1,0,3),
         fontSize: _myAnimation!.value.toInt())
         )
