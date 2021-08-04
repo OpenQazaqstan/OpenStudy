@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'colors.dart' as EduColors;
-
-import 'pages/login.dart' as Login;
 import 'pages/entry.dart' as Entry;
 
 void main() {
