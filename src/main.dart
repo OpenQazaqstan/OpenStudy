@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'colors.dart' as EduColors;
 import 'input.dart' as Input;
+
 void main() {
   runApp(MyApp());
 }
@@ -23,7 +24,7 @@ class LoginDemo extends StatefulWidget {
 class _LoginDemoState extends State<LoginDemo> {
   final emailController = TextEditingController();
   final loginController = TextEditingController();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,12 +49,14 @@ class _LoginDemoState extends State<LoginDemo> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Input.Input(contoller:emailController,
-                                  placeHolder: "E-mail",
-                                  obscureText: false),
-                      Input.Input(contoller:loginController,
-                                  placeHolder: "Пароль",
-                                  obscureText: true),
+                      Input.Input(
+                          contoller: emailController,
+                          placeHolder: "E-mail",
+                          obscureText: false),
+                      Input.Input(
+                          contoller: loginController,
+                          placeHolder: "Пароль",
+                          obscureText: true),
                       TextButton(
                         onPressed: () {
                           // TODO: FORGOT PASSWORD SCREEN GOES HERE
@@ -94,5 +97,3 @@ class _LoginDemoState extends State<LoginDemo> {
         ));
   }
 }
-
-
