@@ -22,10 +22,6 @@ class Input extends StatefulWidget {
 class _InputState extends State<Input> {
   @override
   Widget build(BuildContext context) {
-    // widget.contoller.addListener(() {
-    //   setState(() {});
-    // });
-
     return Container(
         margin: widget.margin,
         child: TextFormField(
