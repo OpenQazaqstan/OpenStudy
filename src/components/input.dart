@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'colors.dart' as EduColors;
+import '../colors.dart' as EduColors;
 
 class Input extends StatefulWidget {
   Input(
