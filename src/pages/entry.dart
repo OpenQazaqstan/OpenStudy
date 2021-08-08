@@ -34,6 +34,6 @@ class SlideshowState extends State<Slideshow>
             child: Text("text example",
                 style: TextStyle(
                     color: Color.fromRGBO(_myAnimation!.value.toInt(), 1, 0, 3),
-                    fontSize: _myAnimation!.value.toInt()))));
+                    fontSize: _myAnimation!.value))));
   }
 }
