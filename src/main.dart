@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'pages/entry.dart' as Entry;
+// import 'pages/entry.dart' as Entry;
+import 'pages/login.dart' as login_page;
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Entry.Slideshow(),
+      home: login_page.Login(),
     );
   }
 }

@@ -1,6 +1,7 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
 class Slideshow extends StatefulWidget {
+  @override
   State<Slideshow> createState() {
     return SlideshowState();
   }
@@ -13,6 +14,8 @@ class SlideshowState extends State<Slideshow>
 
   @override
   void initState() {
+    super.initState();
+
     _controller = AnimationController(
       vsync: this,
       duration: Duration(seconds: 4),
@@ -27,11 +30,12 @@ class SlideshowState extends State<Slideshow>
     _controller!.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
         animation: _myAnimation!,
         builder: (context, ch) => Container(
-            child: Text("text example",
+            child: Text('text example',
                 style: TextStyle(
                     color: Color.fromRGBO(_myAnimation!.value.toInt(), 1, 0, 3),
                     fontSize: _myAnimation!.value))));

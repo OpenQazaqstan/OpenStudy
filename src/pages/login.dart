@@ -1,7 +1,7 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
-import "../shared/colors.dart" as EduColors;
-import '../components/input.dart' as Input;
+import '../shared/colors.dart' as edu_colors;
+import '../components/input.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -15,11 +15,11 @@ class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: EduColors.background,
+        backgroundColor: edu_colors.background,
         appBar: AppBar(
           title: Text(''),
           elevation: 0, // no shadow
-          backgroundColor: EduColors.background,
+          backgroundColor: edu_colors.background,
           brightness: Brightness.dark,
           centerTitle: true,
         ),
@@ -36,13 +36,13 @@ class LoginState extends State<Login> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Input.Input(
+                      Input(
                           contoller: emailController,
-                          placeHolder: "E-mail",
+                          placeHolder: 'E-mail',
                           obscureText: false),
-                      Input.Input(
+                      Input(
                           contoller: loginController,
-                          placeHolder: "Пароль",
+                          placeHolder: 'Пароль',
                           obscureText: true),
                       TextButton(
                         onPressed: () {
@@ -51,7 +51,7 @@ class LoginState extends State<Login> {
                         child: Text(
                           'Забыли пароль?',
                           style: TextStyle(
-                              color: EduColors.secondForeground, fontSize: 14),
+                              color: edu_colors.secondForeground, fontSize: 14),
                         ),
                       ),
                     ],
@@ -68,12 +68,12 @@ class LoginState extends State<Login> {
                           margin: EdgeInsets.only(bottom: 23),
                           child: MaterialButton(
                             child: Text('Войти'),
-                            color: EduColors.primary,
+                            color: edu_colors.primary,
                             padding: EdgeInsets.symmetric(vertical: 20),
-                            textColor: EduColors.foreground,
+                            textColor: edu_colors.foreground,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12)),
-                            onPressed: () => print('lol'),
+                            onPressed: () => print('test'),
                           ),
                         )
                       ]),
