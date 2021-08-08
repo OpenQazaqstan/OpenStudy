@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../colors.dart' as EduColors;
+import '../shared/colors.dart' as EduColors;
 
 class Input extends StatefulWidget {
   Input(
@@ -33,16 +33,15 @@ class _InputState extends State<Input> {
             floatingLabelBehavior: FloatingLabelBehavior.never,
             labelText: '${widget.placeHolder}',
             hintText: '${widget.placeHolder}',
-            hintStyle: TextStyle(
-                color: EduColors.secondForeground, fontSize: 14),
-            labelStyle: TextStyle(
-                color: EduColors.secondForeground, fontSize: 14),
+            hintStyle:
+                TextStyle(color: EduColors.secondForeground, fontSize: 14),
+            labelStyle:
+                TextStyle(color: EduColors.secondForeground, fontSize: 14),
             fillColor: EduColors.secondBackground,
             filled: true,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.0),
-              borderSide: BorderSide(
-                  color: EduColors.primary, width: 1.0),
+              borderSide: BorderSide(color: EduColors.primary, width: 1.0),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.0),
@@ -55,4 +54,3 @@ class _InputState extends State<Input> {
         ));
   }
 }
-

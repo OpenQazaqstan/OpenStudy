@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-import "../colors.dart" as EduColors;
+import "../shared/colors.dart" as EduColors;
 import '../components/input.dart' as Input;
 
 class Login extends StatefulWidget {
