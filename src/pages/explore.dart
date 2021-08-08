@@ -5,6 +5,9 @@ import '../shared/colors.dart' as edu_colors;
 import '../shared/styles.dart' as styles;
 
 import '../components/tag.dart';
+import '../components/card.dart';
+
+import 'about.dart';
 
 class Explore extends StatefulWidget {
   @override
@@ -27,7 +30,7 @@ class ExploreState extends State<Explore> {
             padding: EdgeInsets.only(right: 28),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: <Widget>[
                 Align(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -56,8 +59,24 @@ class ExploreState extends State<Explore> {
                       Tag(text: 'Programming'),
                       Tag(text: 'Biology'),
                       Tag(text: 'Languages'),
+                      SizedBox(width: 28)
                     ],
                   )),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: 28, top: 20),
+            child: Column(
+              children: <Widget>[
+                CourseCard(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => About()),
+                    );
+                  },
+                ),
+              ],
             ),
           )
         ]),
