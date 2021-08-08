@@ -8,3 +8,7 @@ const secondBackground = Color(0xFF181F25);
 
 const foreground = Color(0xFFFCFDFF);
 const secondForeground = Color(0xFF96999E);
+
+const primaryGradient = LinearGradient(
+  colors: <Color>[Color(0xFF34C5FE), Color(0xFF9CE3FF)],
+);

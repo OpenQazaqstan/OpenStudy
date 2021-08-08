@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../shared/colors.dart' as edu_colors;
+import '../shared/styles.dart' as styles;
+
 import '../components/input.dart';
+import '../components/raised_gradient_button.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -23,13 +26,26 @@ class LoginState extends State<Login> {
           brightness: Brightness.dark,
           centerTitle: true,
         ),
-        body: Center(
+        body: Container(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: 28),
             child: Column(
               children: <Widget>[
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Добро пожаловать 👋',
+                      style: styles.headerText,
+                    )),
                 Container(
-                    width: 200, child: Image.asset('assets/images/logo.png')),
+                  padding: EdgeInsets.only(top: 10),
+                  child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'OpenStudy это лучший способ узнать что-то новое',
+                        style: styles.secondaryText,
+                      )),
+                ),
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -38,21 +54,25 @@ class LoginState extends State<Login> {
                     children: <Widget>[
                       Input(
                           contoller: emailController,
-                          placeHolder: 'E-mail',
+                          placeHolder: 'Почта',
                           obscureText: false),
                       Input(
                           contoller: loginController,
                           placeHolder: 'Пароль',
-                          obscureText: true),
+                          obscureText: true,
+                          margin: EdgeInsets.only(top: 16)),
                       TextButton(
                         onPressed: () {
                           // to do
                         },
-                        child: Text(
-                          'Забыли пароль?',
-                          style: TextStyle(
-                              color: edu_colors.secondForeground, fontSize: 14),
-                        ),
+                        child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Text(
+                              'Забыли пароль?',
+                              style: TextStyle(
+                                  color: edu_colors.secondForeground,
+                                  fontSize: 14),
+                            )),
                       ),
                     ],
                   ),
@@ -66,13 +86,15 @@ class LoginState extends State<Login> {
                       children: <Widget>[
                         Container(
                           margin: EdgeInsets.only(bottom: 23),
-                          child: MaterialButton(
-                            child: Text('Войти'),
-                            color: edu_colors.primary,
+                          child: RaisedGradientButton(
+                            child: Text(
+                              'Войти',
+                              style: TextStyle(color: edu_colors.background),
+                            ),
                             padding: EdgeInsets.symmetric(vertical: 20),
                             textColor: edu_colors.foreground,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12)),
+                            borderRadius: BorderRadius.circular(12),
+                            gradient: edu_colors.primaryGradient,
                             onPressed: () => print('test'),
                           ),
                         )
