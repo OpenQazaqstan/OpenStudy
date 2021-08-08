@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // import 'pages/entry.dart' as Entry;
-import 'pages/login.dart' as login_page;
+import 'pages/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: login_page.Login(),
+      theme: ThemeData(fontFamily: 'Inter'),
+      home: Login(),
     );
   }
 }

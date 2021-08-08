@@ -12,3 +12,7 @@ const secondForeground = Color(0xFF96999E);
 const primaryGradient = LinearGradient(
   colors: <Color>[Color(0xFF34C5FE), Color(0xFF9CE3FF)],
 );
+const backgroundGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: <Color>[Color(0xFF16171B), Color(0xFF040509)]);
