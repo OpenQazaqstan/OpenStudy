@@ -34,7 +34,7 @@ class LoginState extends State<Login> {
                 Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'Добро пожаловать 👋',
+                      'Добро пожаловать! 👋',
                       style: styles.headerText,
                     )),
                 Container(
@@ -93,7 +93,7 @@ class LoginState extends State<Login> {
                             ),
                             padding: EdgeInsets.symmetric(vertical: 20),
                             textColor: edu_colors.foreground,
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(9),
                             gradient: edu_colors.primaryGradient,
                             onPressed: () => print('test'),
                           ),

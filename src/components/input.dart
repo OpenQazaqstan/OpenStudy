@@ -40,11 +40,11 @@ class _InputState extends State<Input> {
             fillColor: edu_colors.secondBackground,
             filled: true,
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: BorderRadius.circular(9.0),
               borderSide: BorderSide(color: edu_colors.primary, width: 1.0),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: BorderRadius.circular(9.0),
               borderSide: BorderSide(
                 color: edu_colors.background,
                 width: 1.0,
