@@ -4,6 +4,8 @@ import 'package:flutter_remix/flutter_remix.dart';
 import '../shared/colors.dart' as edu_colors;
 import '../shared/styles.dart' as styles;
 
+import '../components/tag.dart';
+
 class Explore extends StatefulWidget {
   @override
   ExploreState createState() => ExploreState();
@@ -19,23 +21,44 @@ class ExploreState extends State<Explore> {
         body: Container(
       decoration: BoxDecoration(gradient: edu_colors.backgroundGradient),
       child: Padding(
-        padding: EdgeInsets.only(left: 28, right: 28, top: 60),
+        padding: EdgeInsets.only(left: 28, top: 60),
         child: Column(children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    'Все курсы',
-                    style: styles.headerText,
+          Padding(
+            padding: EdgeInsets.only(right: 28),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Все курсы',
+                      style: styles.headerText,
+                    )),
+                Icon(
+                  FlutterRemix.search_line,
+                  size: 20,
+                  color: edu_colors.foreground,
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 28),
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Wrap(
+                    alignment: WrapAlignment.end,
+                    spacing: 10, // set spacing here
+                    children: <Widget>[
+                      Tag(text: 'Math', active: true),
+                      Tag(text: 'Programming'),
+                      Tag(text: 'Biology'),
+                      Tag(text: 'Languages'),
+                    ],
                   )),
-              Icon(
-                FlutterRemix.search_line,
-                size: 20,
-                color: edu_colors.foreground,
-              ),
-            ],
+            ),
           )
         ]),
       ),
