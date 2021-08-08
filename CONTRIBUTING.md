@@ -47,8 +47,10 @@ $ flutter pub get # install the dependencies of the project
 ``` bash
 # watch and auto re-build
 $ flutter run
-```
 
+# generate icons
+$ flutter pub run flutter_launcher_icons:main
+```
 
 ## Project Structure
 
