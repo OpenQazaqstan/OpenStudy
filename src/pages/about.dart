@@ -4,18 +4,12 @@ import 'package:flutter_remix/flutter_remix.dart';
 import '../shared/colors.dart' as edu_colors;
 import '../shared/styles.dart' as styles;
 
-import '../components/tag.dart';
-import '../components/card.dart';
-
 class About extends StatefulWidget {
   @override
   AboutState createState() => AboutState();
 }
 
 class AboutState extends State<About> {
-  final emailController = TextEditingController();
-  final loginController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

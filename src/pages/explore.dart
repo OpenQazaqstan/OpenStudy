@@ -15,9 +15,6 @@ class Explore extends StatefulWidget {
 }
 
 class ExploreState extends State<Explore> {
-  final emailController = TextEditingController();
-  final loginController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
