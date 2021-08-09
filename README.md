@@ -6,7 +6,7 @@
 </header>
 
 ## Introduction
-OpenStudy is an Open Source learning platform for `android` and` ios` for teaching such disciplines as: programming, mathematics, algorithms, etc.
+OpenStudy is an Open Source learning platform for `android` and `ios` for teaching such disciplines as: programming, mathematics, algorithms, etc.
 
 The features of our application are:
 
