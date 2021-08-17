@@ -8,16 +8,14 @@ import '../components/lessonComponents/quiz.dart';
 import '../components/raised_gradient_button.dart';
 
 List<Widget> pagesTest = [
-  Paragraph(text: "Комбинаторика это раздел математики"),
-  Paragraph(
-      text:
-          "Она решает целый ряд практических задач: например, нахождение перестановок, сочетаний"),
+  Paragraph(text: "Test text 1"),
+  Paragraph(text: "Test text 2"),
   Quiz(
-      title: "Что такое комбинаторика?",
+      title: "Is it Question?",
       options: [
-        "Раздел математики",
-        "Раздел русского языка",
-        "Кол-во перестановок",
+        "Option 1",
+        "Option 2",
+        "Option 3",
       ],
       group: 0)
 ];
@@ -27,24 +25,24 @@ class Lesson extends StatefulWidget {
 
   final List<Widget>? pages;
 
+  @override
   State<Lesson> createState() {
     return LessonState();
   }
 }
 
 class LessonState extends State<Lesson> {
-  int? currentPage;
+  int currentPage = 0;
 
   @override
   void initState() {
     super.initState();
-    this.currentPage = 0;
   }
 
   Widget topBar() {
     return Container(
         child: Padding(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -61,43 +59,46 @@ class LessonState extends State<Lesson> {
   Widget content() {
     return Expanded(
         child: Padding(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 20),
             child: ListView(
-              children: [widget.pages![currentPage!]],
+              children: [widget.pages![currentPage]],
             )));
   }
 
+  @override
   Widget build(buildContext) {
     return Scaffold(
         body: Container(
             decoration: BoxDecoration(gradient: edu_colors.backgroundGradient),
-            child: Column(
-              children: [
-                topBar(),
-                content(),
-                Container(
-                  margin: EdgeInsets.only(bottom: 23),
-                  child: RaisedGradientButton(
-                    child: Text(
-                      'Продолжить',
-                      style: TextStyle(color: edu_colors.background),
-                    ),
-                    padding: EdgeInsets.symmetric(vertical: 20),
-                    textColor: edu_colors.foreground,
-                    borderRadius: BorderRadius.circular(9),
-                    gradient: edu_colors.primaryGradient,
-                    onPressed: () {
-                      setState(() {
-                        if (currentPage != null) currentPage = currentPage! + 1;
-                        if (currentPage! >= widget.pages!.length) {
-                          currentPage = widget.pages!.length - 1;
-                        }
-                      });
-                    },
-                  ),
-                )
-              ],
-            )));
+            child: SafeArea(
+                child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      children: [
+                        topBar(),
+                        content(),
+                        Container(
+                          margin: EdgeInsets.only(bottom: 23),
+                          child: RaisedGradientButton(
+                            child: Text(
+                              'Продолжить',
+                              style: TextStyle(color: edu_colors.background),
+                            ),
+                            padding: EdgeInsets.symmetric(vertical: 20),
+                            textColor: edu_colors.foreground,
+                            borderRadius: BorderRadius.circular(9),
+                            gradient: edu_colors.primaryGradient,
+                            onPressed: () {
+                              setState(() {
+                                if (currentPage < widget.pages!.length - 1) {
+                                  currentPage = currentPage + 1;
+                                }
+                              });
+                            },
+                          ),
+                        )
+                      ],
+                    )))));
   }
 }
 
@@ -106,6 +107,7 @@ class Paragraph extends StatelessWidget {
 
   final String? text;
 
+  @override
   Widget build(buildContext) {
     return Padding(
         padding: EdgeInsets.only(top: 10, bottom: 10),

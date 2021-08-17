@@ -15,6 +15,7 @@ class Quiz extends StatefulWidget {
   final List<String>? options;
   final int? group;
 
+  @override
   State<Quiz> createState() {
     return QuizState();
   }
@@ -46,6 +47,7 @@ class QuizState extends State<Quiz> {
     );
   }
 
+  @override
   Widget build(buildContext) {
     return Container(
         child: Column(
